@@ -50,7 +50,7 @@
 "millions_unit" = "%@M";
 
 /* (MainPageController) Text for data units (K) Kilo, Thousands */
-"thousands_unit" = "%@B";
+"thousands_unit" = "%@K";
 
 /* (MainPageController) Text for data units 100000000 for China, Korea and Japan, it shouldn't be translated in other languages */
 "hundred_millions_unit" = "%@100M";
@@ -960,6 +960,10 @@
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Yerel DNS'i kullanmak için <b>Sistem ayarları > Genel > VPN ve Cihaz Yönetimi > DNS'de <b>%@</b> öğesini seçin</b>.";
+
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "<b>Sistem ayarları → Wi-Fi → Bağlantı Yardımı</b> öğesinden Bağlantı Yardımı özelliğini devre dışı bırakmanızı öneririz";
+"connectivity_assist_warning_badge_description" = "<b>Sistem ayarları → Wi-Fi → Bağlantı Yardımı</b> öğesinden Bağlantı Yardımı özelliğini devre dışı bırakmanızı öneririz";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Şimdiye kadarki reklam engelleme deneyiminden memnun olup olmadığınızı bize söyleyin";

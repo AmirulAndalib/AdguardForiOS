@@ -362,6 +362,26 @@ extension AESharedResourcesProtocol {
         }
     }
 
+    /* The Connectivity Assist warning dialog is shown only once during the whole app lifetime */
+    var connectivityAssistDialogShown: Bool {
+        get {
+            sharedDefaults().bool(forKey: connectivityAssistDialogShownKey)
+        }
+        set {
+            sharedDefaults().set(newValue, forKey: connectivityAssistDialogShownKey)
+        }
+    }
+
+    /* The Connectivity Assist warning badge is shown until the user closes it */
+    var connectivityAssistBadgeShown: Bool {
+        get {
+            sharedDefaults().bool(forKey: connectivityAssistBadgeShownKey)
+        }
+        set {
+            sharedDefaults().set(newValue, forKey: connectivityAssistBadgeShownKey)
+        }
+    }
+
     var isMigrationTo4_3Passed: Bool {
         get {
             return sharedDefaults().bool(forKey: migrationTo4_3PassedKey)
@@ -409,6 +429,8 @@ fileprivate extension AESharedResourcesProtocol {
     var advancedProtectionPermissionsGrantedKey: String { "advancedProtectionPermissionsGrantedKey" }
     var safariWebExtensionIsOnKey: String { "safariWebExtensionIsOnKey" }
     var whatsNewScreenShownKey: String { "whatsNewScreenShownKey" }
+    var connectivityAssistDialogShownKey: String { "connectivity_assistant_warning_dialog_shown" }
+    var connectivityAssistBadgeShownKey: String { "connectivity_assistant_warning_badge_shown" }
     var disableYouTubeFeatureKey: String { "disableYouTubeFeatureKey" }
     var disableSecurityRelatedFeaturesKey: String { "disableSecurityRelatedFeaturesKey" }
     var disableIntegrationFeatureKey: String { "disableIntegrationFeatureKey" }

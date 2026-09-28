@@ -35,6 +35,7 @@ protocol ThemeServiceProtocol {
     var separatorColor: UIColor { get }
     var selectedCellColor: UIColor { get }
     var errorRedColor: UIColor { get }
+    var warningTextColor: UIColor { get }
     var editLineColor: UIColor { get }
     var editLineSelectedColor: UIColor { get }
     var tabBarColor: UIColor { get }
@@ -136,6 +137,10 @@ final class ThemeService: ThemeServiceProtocol {
 
     var errorRedColor: UIColor {
         return UIColor.AdGuardColor.errorRedColor
+    }
+
+    var warningTextColor: UIColor {
+        return UIColor.AdGuardColor.yellow2
     }
 
     var editLineColor: UIColor {

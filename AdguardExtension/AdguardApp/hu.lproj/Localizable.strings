@@ -955,6 +955,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "A natív DNS használatához válassza az <b>%@</b> lehetőséget a <b>Rendszerbeállítások > Általános > VPN és eszközkezelés > DNS</b> menüpontban.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Javasoljuk, hogy kapcsolja ki a Csatlakozási asszisztenst itt: <b>Rendszerbeállítások → Wi-Fi → Csatlakozási asszisztens</b>";
+"connectivity_assist_warning_badge_description" = "Javasoljuk, hogy kapcsolja ki a Csatlakozási asszisztenst itt: <b>Rendszerbeállítások → Wi-Fi → Csatlakozási asszisztens</b>";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Mondja el, hogy elégedett-e a hirdetések eddigi blokkolásával";
 

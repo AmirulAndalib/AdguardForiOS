@@ -165,6 +165,9 @@ final class StartupService : NSObject {
         let rateService: RateAppServiceProtocol = RateAppService(resources: sharedResources, configuration: configuration)
         locator.addService(service: rateService)
 
+        let connectivityAssistWarningService: ConnectivityAssistWarningServiceProtocol = ConnectivityAssistWarningService(resources: sharedResources, complexProtection: complexProtection)
+        locator.addService(service: connectivityAssistWarningService)
+
         let domainsParserService: DomainParserServiceProtocol = DomainParserService()
         locator.addService(service: domainsParserService)
 

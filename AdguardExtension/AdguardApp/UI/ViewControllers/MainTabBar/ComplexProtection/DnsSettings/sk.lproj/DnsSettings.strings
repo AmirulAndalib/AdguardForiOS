@@ -31,6 +31,9 @@
 /* Class = "UILabel"; text = "DNS protection"; ObjectID = "QYv-iX-uIo"; */
 "QYv-iX-uIo.text" = "DNS ochrana";
 
+/* Class = "UILabel"; text = "Connectivity Assist may conflict with DNS protection"; ObjectID = "RRm-qpk-V97"; */
+"RRm-qpk-V97.text" = "Asistent pripojenia môže byť v konflikte s ochranou DNS";
+
 /* Class = "UIButton"; normalTitle = "Try for free"; ObjectID = "Uem-fP-tai"; */
 "Uem-fP-tai.normalTitle" = "Vyskúšajte";
 
@@ -40,8 +43,14 @@
 /* Class = "UILabel"; text = "DNS implementation"; ObjectID = "Xa6-wl-aOE"; */
 "Xa6-wl-aOE.text" = "DNS implementácia";
 
+/* Class = "UIButton"; normalTitle = "Got it"; ObjectID = "YY9-O8t-PvX"; */
+"YY9-O8t-PvX.normalTitle" = "Chápem";
+
 /* Class = "UITextField"; placeholder = "IP, sdns://, https:// or tls://"; ObjectID = "ZgC-4d-Peb"; Note = "(Add Custom Filter) url hint"; */
 "ZgC-4d-Peb.placeholder" = "IP, sdns://, https:// alebo tls://";
+
+/* Class = "UILabel"; text = "Connectivity Assist may conflict with DNS protection"; ObjectID = "caw-b4-Titl"; */
+"caw-b4-Titl.text" = "Asistent pripojenia môže byť v konflikte s ochranou DNS";
 
 /* Class = "UILabel"; text = "DNS server address"; ObjectID = "dW3-zk-BPr"; */
 "dW3-zk-BPr.text" = "Adresa DNS servera";

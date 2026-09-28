@@ -961,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "برای استفاده از DNS بومی، <b>%@</b> را در <b>تنظیمات سیستم > عمومی > VPN و مدیریت دستگاه > دی ان اس</b> انتخاب کنید.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "توصیه می‌کنیم Connectivity Assist را در <b>تنظیمات سیستم → Wi-Fi → Connectivity Assist</b> غیرفعال کنید";
+"connectivity_assist_warning_badge_description" = "توصیه می‌کنیم Connectivity Assist را در <b>تنظیمات سیستم → Wi-Fi → Connectivity Assist</b> غیرفعال کنید";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "به ما بگویید که آیا تاکنون از تجربه مسدود کردن تبلیغات راضی هستید یا خیر";
 

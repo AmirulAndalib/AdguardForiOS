@@ -715,6 +715,15 @@
 /*(DnsFiltersController) DNS filters overlimit title */
 "dns_filters_notification_title" = "Disattiva alcuni filtri per un corretto funzionamento";
 
+/*(SafariFiltersStaleNotificationHelper) stale Safari filters reminder title */
+"safari_filters_stale_notification_title" = "Alcune inserzioni possono apparire";
+
+/*(SafariFiltersStaleNotificationHelper) stale Safari filters reminder body */
+"safari_filters_stale_notification_body" = "Apri AdGuard per aggiornare i tuoi filtri e bloccare le inserzioni più recenti";
+
+/*(SafariFiltersStaleNotificationHelper) stale Safari filters reminder body for Pro */
+"safari_filters_stale_notification_body_pro" = "Apri AdGuard Pro per aggiornare i tuoi filtri e bloccare le inserzioni più recenti";
+
 /* (DnsFiltersTableController) - DNS filters title */
 "dns_filters_title" = "Filtri DNS";
 
@@ -951,6 +960,10 @@
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Per utilizzare il DNS nativo, seleziona <b>%@</b> da <b>Impostazioni di sistema > Generali > VPN e Gestione Dispositivo > DNS</b>.";
+
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Consigliamo di disattivare l'Assistenza connettività in <b>Impostazioni di sistema → Wi-Fi → Assistenza connettività</b>";
+"connectivity_assist_warning_badge_description" = "Consigliamo di disattivare l'Assistenza connettività in <b>Impostazioni di sistema → Wi-Fi → Assistenza connettività</b>";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Comunicaci il tuo grado di soddisfazione fin'ora raggiunto con l'esperienza del blocca-annunci";

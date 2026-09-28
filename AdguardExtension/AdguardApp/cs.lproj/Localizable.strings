@@ -961,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Chcete-li povolit nativní DNS, vyberte <b>%@</b> v <b>Nastavení systému > Obecné > VPN & správa zařízení > DNS</b>.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Doporučujeme vypnout Posílené připojení v <b>Nastavení systému → Wi-Fi → Posílené připojení</b>";
+"connectivity_assist_warning_badge_description" = "Doporučujeme vypnout Posílené připojení v <b>Nastavení systému → Wi-Fi → Posílené připojení</b>";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Sdělte nám, zda jste s blokováním reklam zatím spokojeni";
 

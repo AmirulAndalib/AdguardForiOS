@@ -31,6 +31,9 @@
 /* Class = "UILabel"; text = "DNS protection"; ObjectID = "QYv-iX-uIo"; */
 "QYv-iX-uIo.text" = "DNS通信を保護";
 
+/* Class = "UILabel"; text = "Connectivity Assist may conflict with DNS protection"; ObjectID = "RRm-qpk-V97"; */
+"RRm-qpk-V97.text" = "接続アシストはDNS保護と競合する可能性があります";
+
 /* Class = "UIButton"; normalTitle = "Try for free"; ObjectID = "Uem-fP-tai"; */
 "Uem-fP-tai.normalTitle" = "無料で使ってみる";
 
@@ -40,8 +43,14 @@
 /* Class = "UILabel"; text = "DNS implementation"; ObjectID = "Xa6-wl-aOE"; */
 "Xa6-wl-aOE.text" = "DNSの実装";
 
+/* Class = "UIButton"; normalTitle = "Got it"; ObjectID = "YY9-O8t-PvX"; */
+"YY9-O8t-PvX.normalTitle" = "OK";
+
 /* Class = "UITextField"; placeholder = "IP, sdns://, https:// or tls://"; ObjectID = "ZgC-4d-Peb"; Note = "(Add Custom Filter) url hint"; */
 "ZgC-4d-Peb.placeholder" = "IP、sdns://、https:// もしくは tls://";
+
+/* Class = "UILabel"; text = "Connectivity Assist may conflict with DNS protection"; ObjectID = "caw-b4-Titl"; */
+"caw-b4-Titl.text" = "接続アシストはDNS保護と競合する可能性があります";
 
 /* Class = "UILabel"; text = "DNS server address"; ObjectID = "dW3-zk-BPr"; */
 "dW3-zk-BPr.text" = "DNSサーバアドレス";

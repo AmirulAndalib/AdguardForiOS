@@ -333,9 +333,11 @@ extension AppDelegate {
     }
 
     /*
-     Presents RateAppController
+     Presents RateAppController.
+     The completion is called only when the controller has been presented, so the caller can
+     persist the shown state exactly when the dialog was really shown.
      */
-    func presentRateAppController() {
+    func presentRateAppController(completion: @escaping () -> Void) {
         guard let topVC = Self.topViewController() else {
             DDLogError("Failed to get top view controller")
             return
@@ -347,7 +349,7 @@ extension AppDelegate {
         }
         // Check if VC does not present any controller
         if topVC.presentedViewController == nil {
-            topVC.present(rateAppController, animated: true)
+            topVC.present(rateAppController, animated: true, completion: completion)
             return
         }
     }
@@ -497,6 +499,30 @@ extension AppDelegate {
             return
         }
         topVC.present(howToSetupVC, animated: true, completion: nil)
+    }
+
+    /*
+     Presents ConnectivityAssistWarningController.
+     The caller decides whether the warning has to be shown, see ConnectivityAssistWarningService.
+     The completion is called only when the controller has been presented, so the caller can
+     persist the shown state exactly when the warning was really shown.
+     */
+    func presentConnectivityAssistWarningController(completion: @escaping () -> Void) {
+        guard let topVC = Self.topViewController() else {
+            DDLogError("Failed to get top view controller")
+            return
+        }
+
+        let dnsStoryboard = UIStoryboard(name: "DnsSettings", bundle: nil)
+        guard let warningVC = dnsStoryboard.instantiateViewController(withIdentifier: "ConnectivityAssistWarningController") as? ConnectivityAssistWarningController else {
+            DDLogError("DnsSettings.storyboard doesn't have ConnectivityAssistWarningController")
+            return
+        }
+
+        // Do not interrupt a controller that is already presented, the dialog will be shown next time
+        guard topVC.presentedViewController == nil else { return }
+
+        topVC.present(warningVC, animated: true, completion: completion)
     }
 
     /*

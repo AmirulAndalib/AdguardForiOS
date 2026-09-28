@@ -952,6 +952,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Để sử dụng DNS gốc, chọn <b>%@</b> trong <b>Cài đặt hệ thống > Chung > VPN & Quản lý thiết bị > DNS</b>.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Chúng tôi khuyên bạn nên tắt Hỗ trợ kết nối trong <b>Cài đặt hệ thống → Wi-Fi → Hỗ trợ kết nối</b>";
+"connectivity_assist_warning_badge_description" = "Chúng tôi khuyên bạn nên tắt Hỗ trợ kết nối trong <b>Cài đặt hệ thống → Wi-Fi → Hỗ trợ kết nối</b>";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Cho chúng tôi biết liệu bạn có hài lòng với trải nghiệm chặn quảng cáo cho đến nay hay không";
 

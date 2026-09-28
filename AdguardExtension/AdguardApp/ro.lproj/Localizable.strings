@@ -961,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Pentru a utiliza DNS nativ, selectați <b>%@</b> în <b>Setări de sistem > General > Gestiune de VPN & Dispozitive> DNS</b>.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Recomandăm dezactivarea funcției Asistență conectivitate din <b>Configurări sistem → Wi-Fi → Asistență conectivitate</b>";
+"connectivity_assist_warning_badge_description" = "Recomandăm dezactivarea funcției Asistență conectivitate din <b>Configurări sistem → Wi-Fi → Asistență conectivitate</b>";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Spuneți-ne dacă sunteți mulțumit de experiența de blocare a reclamelor până acum";
 

@@ -38,6 +38,11 @@ final class DnsSettingsController : UITableViewController {
     @IBOutlet weak var networkSettingsSeparator: UIView!
     @IBOutlet weak var dnsFilteringSeparator: UIView!
 
+    @IBOutlet weak var connectivityAssistBadge: UIView!
+    @IBOutlet weak var connectivityAssistBadgeTitleLabel: ThemableLabel!
+    @IBOutlet weak var connectivityAssistBadgeDescriptionLabel: ThemableLabel!
+    @IBOutlet weak var connectivityAssistBadgeCloseButton: UIButton!
+
     @IBOutlet var themableLabels: [ThemableLabel]!
     @IBOutlet var separators: [UIView]!
 
@@ -50,6 +55,7 @@ final class DnsSettingsController : UITableViewController {
     private let purchaseService: PurchaseServiceProtocol = ServiceLocator.shared.getService()!
     private let complexProtection: ComplexProtectionServiceProtocol = ServiceLocator.shared.getService()!
     private let nativeDnsManager: NativeDnsSettingsManagerProtocol = ServiceLocator.shared.getService()!
+    private let connectivityAssistWarningService: ConnectivityAssistWarningServiceProtocol = ServiceLocator.shared.getService()!
 
     private var vpnChangeObservation: NotificationToken?
     private var didBecomeActiveNotification: NotificationToken?
@@ -57,6 +63,7 @@ final class DnsSettingsController : UITableViewController {
     private var currentDnsServerObserver: NotificationToken?
     private var onSettingsImportDidEndObserver: NotificationToken?
     private var onSettingsResetObserver: NotificationToken?
+    private var dnsImplementationObserver: NotificationToken?
 
     private var proStatus: Bool {
         return configuration.proStatus
@@ -78,6 +85,7 @@ final class DnsSettingsController : UITableViewController {
 
     private let titleDescriptionCell = 0
     private let titleStateCell = 1
+    private let connectivityAssistWarningRow = 2
 
     private let implementationRow = 0
     private let dnsServerRow = 1
@@ -114,6 +122,12 @@ final class DnsSettingsController : UITableViewController {
             self?.tableView.reloadData()
         }
 
+        // The badge is shown only for the AdGuard DNS implementation,
+        // so its state is recalculated on every implementation change
+        dnsImplementationObserver = NotificationCenter.default.observe(name: .dnsImplementationChanged, object: nil, queue: .main) { [weak self] _ in
+            self?.updateConnectivityAssistWarning()
+        }
+
         let product = purchaseService.standardProduct
         getPtoTitleLabel.text = getTitleString(product: product).uppercased()
 
@@ -121,11 +135,13 @@ final class DnsSettingsController : UITableViewController {
         setupBackButton()
         updateTheme()
         processCurrentImplementation()
+        updateConnectivityAssistWarning()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        updateConnectivityAssistWarning()
         if let enabled = stateFromWidget {
             // We set a small delay to show user a state change
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {[weak self] in
@@ -212,6 +228,10 @@ final class DnsSettingsController : UITableViewController {
             if indexPath.row == titleStateCell {
                 return proStatus ? normalHeight : 0.0
             }
+
+            if indexPath.row == connectivityAssistWarningRow {
+                return connectivityAssistWarningService.shouldShowBadge ? UITableView.automaticDimension : 0.0
+            }
         }
 
         return normalHeight
@@ -246,6 +266,11 @@ final class DnsSettingsController : UITableViewController {
     }
 
     // MARK: Actions
+    @IBAction func closeConnectivityAssistWarningTapped(_ sender: UIButton) {
+        connectivityAssistWarningService.markBadgeAsShown()
+        updateConnectivityAssistWarning()
+    }
+
     @IBAction func toggleEnableSwitch(_ sender: UISwitch) {
         if resources.dnsImplementation == .native {
             if #available(iOS 14.0, *), complexProtection.systemProtectionEnabled {
@@ -273,7 +298,14 @@ final class DnsSettingsController : UITableViewController {
 
         complexProtection.switchSystemProtection(state: enabled, for: self) { [weak self] _ in
             DispatchQueue.main.async {
-                self?.updateVpnInfo()
+                guard let self = self else { return }
+                self.updateVpnInfo()
+
+                if enabled && self.connectivityAssistWarningService.shouldShowDialog {
+                    AppDelegate.shared.presentConnectivityAssistWarningController {
+                        self.connectivityAssistWarningService.markDialogAsShown()
+                    }
+                }
             }
         }
         updateVpnInfo()
@@ -288,7 +320,39 @@ final class DnsSettingsController : UITableViewController {
         systemIcon.tintColor = enabled ? enabledColor : disabledColor
 
         updateServerName()
+
+        // The badge is shown only while DNS protection is enabled
+        updateConnectivityAssistWarning()
+    }
+
+    /**
+     Shows the Connectivity Assist warning badge under the protection switch
+     until the user closes it with the cross button
+     */
+    private func updateConnectivityAssistWarning() {
+        connectivityAssistBadge.isHidden = !connectivityAssistWarningService.shouldShowBadge
         tableView.reloadData()
+    }
+
+    private func setupConnectivityAssistBadge() {
+        connectivityAssistBadge.backgroundColor = theme.notificationWindowColor
+        connectivityAssistBadge.layer.cornerRadius = 12.0
+
+        connectivityAssistBadgeTitleLabel.textColor = theme.blackTextColor
+
+        // The same gray as the other icons of the app: the navigation bar items and the crosses
+        connectivityAssistBadgeCloseButton.tintColor = disabledColor
+
+        connectivityAssistBadgeTitleLabel.font = .systemFont(ofSize: isIpadTrait ? 28.0 : 20.0, weight: .semibold)
+        connectivityAssistBadgeDescriptionLabel.font = .systemFont(ofSize: isIpadTrait ? 20.0 : 16.0)
+
+        // The description contains a bold part, so it is rendered from HTML
+        let description = String.localizedString("connectivity_assist_warning_badge_description")
+        connectivityAssistBadgeDescriptionLabel.setAttributedTitle(
+            description,
+            fontSize: connectivityAssistBadgeDescriptionLabel.font.pointSize,
+            color: theme.grayTextColor
+        )
     }
 
     private func updateServerName() {
@@ -359,6 +423,7 @@ extension DnsSettingsController: ThemableProtocol {
         theme.setupSwitch(enabledSwitch)
         theme.setupSeparators(separators)
         theme.setupNavigationBar(navigationController?.navigationBar)
+        setupConnectivityAssistBadge()
         tableView.reloadData()
     }
 }

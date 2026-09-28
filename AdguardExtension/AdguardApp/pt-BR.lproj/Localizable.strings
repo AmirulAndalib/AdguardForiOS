@@ -956,10 +956,14 @@
 "native_dns_setup_title" = "Ative %@ nas configurações de DNS";
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name */
-"native_dns_setup_description" = "Para ativar o DNS nativo, selecione <b>%@</b> em <b>Ajustes do sistema > Geral > VPN e Rede > DNS</b>.";
+"native_dns_setup_description" = "Para ativar o DNS nativo, selecione <b>%@</b> em <b>Ajustes > Geral > VPN e Rede > DNS</b>.";
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
-"native_dns_setup_description_ios15" = "Para usar DNS nativo, selecione <b>%@</b> em <b>Configurações do sistema> Geral> Gerenciamento de VPN e dispositivo> DNS</b>.";
+"native_dns_setup_description_ios15" = "Para usar DNS nativo, selecione <b>%@</b> em <b>Configurações > Geral > Gestão de VPN e Dispositivo > DNS</b>.";
+
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Recomendamos desativar o Assistente de Conectividade em <b>Ajustes → Wi-Fi → Assistente de Conectividade</b>";
+"connectivity_assist_warning_badge_description" = "Recomendamos desativar o Assistente de Conectividade em <b>Ajustes → Wi-Fi → Assistente de Conectividade</b>";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Diga-nos se você está satisfeito com a experiência de bloqueio de anúncios até agora";
@@ -1212,7 +1216,7 @@ DO NOT TRANSLATE "none" */
 "background_fetch_default_period" = "Período padrão";
 
 /* (BackgroundFetchController) - Background app refresh every 1 hour title */
-"background_fetch_hour_period" = "Cada %s hora";
+"background_fetch_hour_period" = "A cada hora";
 
 /* (BackgroundFetchController) - Background app refresh every 3 hours title */
 "background_fetch_tree_hours_period" = "Cada 3 horas";

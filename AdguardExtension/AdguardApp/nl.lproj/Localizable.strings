@@ -4,6 +4,9 @@
 /* (AESFilterConverter) Error occured when checking of the result from JSON converter. */
 "support_rule_converting_error" = "Regels kunnen niet geconverteerd worden. Er is een onverwachte fout opgetreden. Neem a. u. b. contact op met het support team.";
 
+/* (AEService) Service errors descriptions */
+"json_converting_error" = "Kan de converter naar JSON-formaat niet initialiseren.";
+
 /* (Action Extension - Adguard Assistant) Assistant UI. Title for 'close icon' button */
 "common_action_cancel" = "Annuleren";
 
@@ -208,6 +211,12 @@
 /* (UserFilterController) add whitelist domain button title */
 "add_whitelist_domain_title" = "Domein toevoegen";
 
+/* (UserFilterController) add blacklist rule placeholder */
+"add_blacklist_rule_placeholder" = "||example.org^";
+
+/* (UserFilterController) add whitelist domain placeholder */
+"add_whitelist_domain_placeholder" = "example.org";
+
 /* (UserFilterController) add wifi name placeholder */
 "add_wifi_name_placeholder" = "De naam van je WiFi netwerk";
 
@@ -263,7 +272,7 @@
 "doh_protocol" = "DNS-via-HTTPS";
 
 /* DnsProviderDetailsController - dns over https rotocol */
-"dot_protocol" = "DNS-via-TLS";
+"dot_protocol" = "DNS-over-TLS";
 
 /* DnsProviderDetailsController - dns over quic rotocol */
 "doq_protocol" = "DNS-via-QUIC";
@@ -952,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Om systeem-eigen DNS te gebruiken, selecteer je <b>%@</b> in <b>Systeeminstellingen > Algemeen > VPN en apparaatbeheer > DNS</b>.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "We raden aan om Connectiviteitsassistent uit te schakelen in <b>Systeeminstellingen → Wi-Fi → Connectiviteitsassistent</b>";
+"connectivity_assist_warning_badge_description" = "We raden aan om Connectiviteitsassistent uit te schakelen in <b>Systeeminstellingen → Wi-Fi → Connectiviteitsassistent</b>";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Vertel ons of je tevreden bent over het blokkeren van advertenties";
 
@@ -1131,7 +1144,7 @@
 (LowLevelSettingsController) Low level fallbacks placeholder
 
 DO NOT TRANSLATE "none" */
-"low_level_fallbacks_placeholder" = "Een reserve DNS-oplossing die zal worden gebruikt als de geconfigureerde server niet beschikbaar is. Een lege string betekent het gebruik van de DNS van je systeem als reserve. Een \"none\" string betekent geen fallback.";
+"low_level_fallbacks_placeholder" = "Een reserve DNS-oplossing die zal worden gebruikt als de geconfigureerde server niet beschikbaar is. Een lege string betekent het gebruik van de DNS van je systeem als back-up. Een \"none\" string betekent geen back-up.";
 /* (UpstreamsController) bootstraps title */
 "upstreams_bootstraps_title" = "Bootstrap servers";
 
@@ -1142,7 +1155,7 @@ DO NOT TRANSLATE "none" */
 "upstreams_description" = "Upstream adres";
 
 /* (UpstreamsController) Fallbacks title */
-"upstreams_fallbacks_title" = "Fallback servers";
+"upstreams_fallbacks_title" = "Back-up servers";
 
 /* (UpstreamsController) Custom address title */
 "upstreams_custom_address_title" = "Aangepast IP-adres toevoegen";

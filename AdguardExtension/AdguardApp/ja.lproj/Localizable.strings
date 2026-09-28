@@ -467,7 +467,7 @@
 "add_exception_title" = "除外項目を追加する";
 
 /* (NetworkSettingsController) title for "Filter mobile data" */
-"filter_mobile_title" = "モバイル通信をフイルタルング";
+"filter_mobile_title" = "モバイル通信をフイルタリング";
 
 /* (NetworkSettingsController) title for "Filter wi-fi data" */
 "filter_wifi_title" = "Wi-Fiをフィルタリング";
@@ -960,6 +960,10 @@
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "ネイティブDNSを使用するには、<b>iOS設定→一般→VPNとデバイス管理→DNS</b> で「<b>%@</b>」を選んでください。";
+
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "<b>システム設定 → Wi-Fi → 接続アシスト</b>で接続アシストを無効にすることをお勧めします";
+"connectivity_assist_warning_badge_description" = "<b>システム設定 → Wi-Fi → 接続アシスト</b>で接続アシストを無効にすることをお勧めします";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "これまでのAdGuardによる広告ブロックに満足しているかどうかを教えてください。";

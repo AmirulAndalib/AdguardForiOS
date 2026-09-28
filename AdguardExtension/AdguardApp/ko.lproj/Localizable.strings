@@ -961,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "기존 DNS를 사용하려면 <b>시스템 설정 > 일반 > VPN 및 기기 관리 > DNS</b>에서 <b>%@</b> 항목을 선택하세요.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "<b>시스템 설정 → Wi-Fi → 연결 지원</b>에서 연결 지원 기능을 비활성화하는 것을 권장합니다.";
+"connectivity_assist_warning_badge_description" = "<b>시스템 설정 → Wi-Fi → 연결 지원</b>에서 연결 지원 기능을 비활성화하는 것을 권장합니다.";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "지금까지의 광고 차단이 만족스러웠는지 알려주세요";
 

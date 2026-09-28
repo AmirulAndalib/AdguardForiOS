@@ -160,6 +160,7 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
     private lazy var dnsProvidersManager: DnsProvidersManagerProtocol = { ServiceLocator.shared.getService()! }()
     private lazy var dnsConfigAssistant: DnsConfigManagerAssistantProtocol = { ServiceLocator.shared.getService()! }()
     private lazy var notification: UserNotificationServiceProtocol = { ServiceLocator.shared.getService()! }()
+    private lazy var connectivityAssistWarningService: ConnectivityAssistWarningServiceProtocol = { ServiceLocator.shared.getService()! }()
 
     // MARK: - View models
     private lazy var mainPageModel: MainPageModelProtocol = { MainPageModel(safariProtection: safariProtection, dnsProtection: dnsProtection, dnsConfigAssistant: dnsConfigAssistant) }()
@@ -226,6 +227,9 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
         processState()
         updateProtectionStates()
         updateProtectionStatusText()
+
+        // DNS protection may have been enabled earlier, so the warning is re-checked on every appear
+        presentConnectivityAssistWarningIfNeeded()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -321,6 +325,10 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
                     if error != nil {
                         ACSSystemUtils.showSimpleAlert(for: self, withTitle: nil, message: error?.localizedDescription)
                     }
+
+                    if self.systemProtectionButton.buttonIsOn {
+                        self.presentConnectivityAssistWarningIfNeeded()
+                    }
                 }
             }
         }
@@ -354,6 +362,10 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
 
                 if systemError != nil {
                     ACSSystemUtils.showSimpleAlert(for: self, withTitle: nil, message: systemError?.localizedDescription)
+                }
+
+                if enabled {
+                    self.presentConnectivityAssistWarningIfNeeded()
                 }
             }
         }
@@ -949,14 +961,31 @@ final class MainPageController: UIViewController, DateTypeChangedProtocol, Compl
 
     private func showRateAppDialogIfNeeded() {
         // Note: 3-second delay mitigates race condition with requestNotificationPermission() system alert.
-        // The presentedViewController == nil guard in presentRateAppController() prevents double-presentation,
-        // but if the user hasn't dismissed the notification alert within 3s, the rate dialog will be skipped.
+        // The presentedViewController == nil guard in presentRateAppController() prevents double-presentation:
+        // if another controller is on the screen, the rate dialog is not marked as shown and stays due
         let rateService: RateAppServiceProtocol = ServiceLocator.shared.getService()!
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
             if rateService.shouldShowRateAppDialog {
-                AppDelegate.shared.presentRateAppController()
-                self?.resources.rateAppShown = true
+                AppDelegate.shared.presentRateAppController {
+                    self?.resources.rateAppShown = true
+                }
             }
+        }
+    }
+
+    /**
+     Presents the Connectivity Assist warning if it is due.
+     The rate dialog is presented from the same screen, both dialogs may be due at the same moment,
+     but only one of them can be presented, so the rate dialog has priority
+     */
+    private func presentConnectivityAssistWarningIfNeeded() {
+        guard connectivityAssistWarningService.shouldShowDialog else { return }
+
+        let rateService: RateAppServiceProtocol = ServiceLocator.shared.getService()!
+        guard !rateService.shouldShowRateAppDialog else { return }
+
+        AppDelegate.shared.presentConnectivityAssistWarningController {
+            self.connectivityAssistWarningService.markDialogAsShown()
         }
     }
 

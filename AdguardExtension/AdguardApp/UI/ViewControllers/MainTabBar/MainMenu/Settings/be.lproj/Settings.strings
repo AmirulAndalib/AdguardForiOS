@@ -113,7 +113,7 @@
 "cdQ-kW-CG7.text" = "Рэжым тунэлю";
 
 /* Class = "UILabel"; text = "Respond with zero IP address (0.0.0.0 for A; :: for AAAA) when blocked by AdBlock-style rule; respond with the IP address specified in the rule when blocked by /etc/hosts-style rule"; ObjectID = "cgV-he-JNk"; */
-"cgV-he-JNk.text" = "Адказвайце з нулявым IP-адрасам (0.0.0.0 для A; :: для AAAA) пры блакіроўцы правілам у стылі AdBlock; адказвайце з IP-адрасам, указаным у правіле, калі блакіраваны правілам /etc/hosts-style";
+"cgV-he-JNk.text" = "Адказваць з нулявым IP-адрасам (0.0.0.0 для A; :: для AAAA) пры блакіроўцы правілам у стылі AdBlock; адказваць з IP-адрасам указаным у правіле пры блакіроўцы правілам у стылі /etc/hosts-style";
 
 /* Class = "UILabel"; text = "Restart protection when network changes"; ObjectID = "dLN-5K-c1N"; */
 "dLN-5K-c1N.text" = "Перазапускаць абарону пры змене сеткі";
@@ -128,7 +128,7 @@
 "eiP-yl-Xb3.text" = "Full-Tunnel (без значка VPN)";
 
 /* Class = "UILabel"; text = "Compatible with “Personal VPN” apps"; ObjectID = "gxl-pG-zh1"; */
-"gxl-pG-zh1.text" = "Стасуем з персанальнымі VPN-дадаткамі";
+"gxl-pG-zh1.text" = "Сумяшчальны з праграмамі «Асабісты VPN»";
 
 /* Class = "UILabel"; text = "In the Split-Tunnel mode AdGuard is compatible with so-called “Personal VPN” apps. As a trade-off, in this mode it may be bypassed by system in case of bad connectivity."; ObjectID = "jmQ-ze-hFG"; */
 "jmQ-ze-hFG.text" = "У рэжыме Split-Tunnel AdGuard сумяшчальны з так званымі \"персанальнымі VPN-дадаткамі\". У якасці кампрамісу, у гэтым рэжыме ён можа быць абмінуты сістэмай у выпадку дрэннай сувязі.";

@@ -961,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Um natives DNS zu verwenden, öffnen Sie die <b>„Systemeinstellungen“ ➜ „Allgemein“ ➜ „VPN und Geräteverwaltung“ ➜ „DNS“</b> und wählen Sie dort <b>%@</b>.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Wir empfehlen, die Verbindungshilfe unter <b>Systemeinstellungen → WLAN → Verbindungshilfe</b> zu deaktivieren";
+"connectivity_assist_warning_badge_description" = "Wir empfehlen, die Verbindungshilfe unter <b>Systemeinstellungen → WLAN → Verbindungshilfe</b> zu deaktivieren";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Wie würden Sie Ihre Erfahrung mit AdGuard beschreiben?";
 

@@ -311,7 +311,7 @@
 "theme_header_title" = "Thème";
 
 /* (AdvancedSettingsController) "Other" header view title*/
-"other_header_title" = "Autres";
+"other_header_title" = "Autre";
 
 /* (AdvancedSettingsController) Content blocker description text */
 "cb_description_common" = "6 bloqueurs de contenus, chacun avec près de 50,000 règles";
@@ -338,7 +338,7 @@
 "cb_screen_content_blockers_social_name" = "Médias sociaux";
 
 /* (ContentBlockersTableController) - Other content blocker name */
-"cb_screen_content_blockers_other_name" = "Autres";
+"cb_screen_content_blockers_other_name" = "Autre";
 
 /* (ContentBlockersTableController) - Custom content blocker name */
 "cb_screen_content_blockers_custom_name" = "Personnalisé";
@@ -715,6 +715,15 @@
 /*(DnsFiltersController) DNS filters overlimit title */
 "dns_filters_notification_title" = "Désactiver certains filtres pour le bon fonctionnement";
 
+/*(SafariFiltersStaleNotificationHelper) stale Safari filters reminder title */
+"safari_filters_stale_notification_title" = "Certaines publicités peuvent s'afficher";
+
+/*(SafariFiltersStaleNotificationHelper) stale Safari filters reminder body */
+"safari_filters_stale_notification_body" = "Ouvrez AdGuard pour mettre à jour vos filtres et bloquer les nouvelles publicités";
+
+/*(SafariFiltersStaleNotificationHelper) stale Safari filters reminder body for Pro */
+"safari_filters_stale_notification_body_pro" = "Ouvrez AdGuard Pro pour mettre à jour vos filtres et bloquer les nouvelles publicités";
+
 /* (DnsFiltersTableController) - DNS filters title */
 "dns_filters_title" = "Filtres DNS";
 
@@ -951,6 +960,10 @@
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Pour utiliser le DNS natif, sélectionnez <b>%@</b> dans <b>Paramètres du système > Général > Gestion du VPN & Dispositif > DNS</b>.";
+
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Nous recommandons de désactiver l’Assistance connectivité dans les <b>Paramètres système → Assistance connectivité Wi-Fi →</b>";
+"connectivity_assist_warning_badge_description" = "Nous recommandons de désactiver l’Assistance connectivité dans les <b>Paramètres système → Assistance connectivité Wi-Fi →</b>";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Dites nous si vous êtes satisfait(e) de votre expérience de blocage de pub à présent";

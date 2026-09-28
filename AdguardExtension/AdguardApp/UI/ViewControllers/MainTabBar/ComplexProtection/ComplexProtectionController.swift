@@ -63,6 +63,15 @@ final class ComplexProtectionController: UITableViewController {
     @IBOutlet weak var premiumLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var premiumLabelSpacing: NSLayoutConstraint!
 
+    @IBOutlet weak var systemWarningLabel: ThemableLabel!
+
+    /*
+     The constraint is deactivated while the warning line is shown, so the outlet must be strong:
+     a deactivated constraint is removed from the label and released, a weak outlet would become nil
+     */
+    @IBOutlet var systemWarningLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var systemWarningLabelSpacing: NSLayoutConstraint!
+
 
     // MARK: - Advanced protection outlets
 
@@ -110,6 +119,7 @@ final class ComplexProtectionController: UITableViewController {
     private let complexProtection: ComplexProtectionServiceProtocol = ServiceLocator.shared.getService()!
     private let nativeDnsManager: NativeDnsSettingsManagerProtocol = ServiceLocator.shared.getService()!
     private let safariProtection: SafariProtectionProtocol = ServiceLocator.shared.getService()!
+    private let connectivityAssistWarningService: ConnectivityAssistWarningServiceProtocol = ServiceLocator.shared.getService()!
 
     // Observers
     private var vpnChangeObservation: NotificationToken?
@@ -160,10 +170,12 @@ final class ComplexProtectionController: UITableViewController {
         updateAdvancedProtectionInfo()
         observeProStatus()
         updateVpnInfo()
+        updateConnectivityAssistWarning()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         observeProStatus()
+        updateConnectivityAssistWarning()
     }
 
     deinit {
@@ -218,6 +230,12 @@ final class ComplexProtectionController: UITableViewController {
 
                 if error != nil {
                     self.performSegue(withIdentifier: self.showTrackingProtectionSegue, sender: self)
+                }
+
+                if enabled && self.connectivityAssistWarningService.shouldShowDialog {
+                    AppDelegate.shared.presentConnectivityAssistWarningController {
+                        self.connectivityAssistWarningService.markDialogAsShown()
+                    }
                 }
             }
         }
@@ -385,7 +403,9 @@ final class ComplexProtectionController: UITableViewController {
         let enabled = complexProtection.systemProtectionEnabled
         systemProtectionSwitch.isOn = enabled
         systemIcon.tintColor = enabled ? enabledColor : disabledColor
-        tableView.reloadData()
+
+        // The warning line is shown only while DNS protection is enabled
+        updateConnectivityAssistWarning()
     }
 
     private func updateSafariProtectionInfo(){
@@ -414,6 +434,26 @@ final class ComplexProtectionController: UITableViewController {
 
         tableView.reloadData()
     }
+
+    /**
+     Shows the Connectivity Assist warning line under the DNS protection description.
+     The line is shown until the user closes the badge on the DNS protection screen.
+     The cell height is calculated by Auto Layout, the line takes part in the constraints chain.
+     */
+    private func updateConnectivityAssistWarning() {
+        // The outlets of the static cells are connected only after the view is loaded,
+        // traitCollectionDidChange may be called before that
+        guard isViewLoaded else { return }
+
+        let shouldShow = connectivityAssistWarningService.shouldShowBadge
+
+        // The line is multi-line, so its height is calculated by Auto Layout.
+        // The height constraint is used only to collapse the line, so it is deactivated when the line is shown
+        systemWarningLabelHeight.isActive = !shouldShow
+        systemWarningLabelSpacing.constant = shouldShow ? 2.0 : 0.0
+
+        tableView.reloadData()
+    }
 }
 
 extension ComplexProtectionController: ThemableProtocol {
@@ -431,6 +471,9 @@ extension ComplexProtectionController: ThemableProtocol {
         theme.setupTable(tableView)
         theme.setupNavigationBar(navigationController?.navigationBar)
         theme.setupLabels(themableLabels)
+
+        systemWarningLabel.textColor = theme.warningTextColor
+        systemWarningLabel.font = .systemFont(ofSize: isIpadTrait ? 20.0 : 14.0)
 
         tableView.reloadData()
     }

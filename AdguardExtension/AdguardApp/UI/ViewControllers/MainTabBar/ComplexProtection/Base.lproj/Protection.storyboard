@@ -225,6 +225,15 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connectivity Assist may conflict with DNS protection" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caw-n1-Lb1" customClass="ThemableLabel" customModule="Adguard" customModuleProvider="target">
+                                                    <rect key="frame" x="56" y="79" width="277" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" id="caw-h1-Hgt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="premium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9C-72-GAw" customClass="EdgeInsetLabel" customModule="Adguard" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="16" width="51" height="0.0"/>
                                                     <constraints>
@@ -254,6 +263,9 @@
                                                     <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                                                 </constraint>
                                                 <constraint firstItem="teo-vm-NRJ" firstAttribute="top" secondItem="cnF-td-Ba1" secondAttribute="bottom" constant="2" id="RiJ-Za-rxq"/>
+                                                <constraint firstItem="caw-n1-Lb1" firstAttribute="leading" secondItem="cnF-td-Ba1" secondAttribute="leading" id="caw-c1-Led"/>
+                                                <constraint firstItem="caw-n1-Lb1" firstAttribute="trailing" secondItem="cnF-td-Ba1" secondAttribute="trailing" id="caw-c2-Trl"/>
+                                                <constraint firstItem="caw-n1-Lb1" firstAttribute="top" secondItem="teo-vm-NRJ" secondAttribute="bottom" constant="2" id="caw-c3-Spc"/>
                                                 <constraint firstItem="P9C-72-GAw" firstAttribute="leading" secondItem="4LF-7o-NaU" secondAttribute="trailing" constant="16" id="UET-lF-eLF"/>
                                                 <constraint firstItem="teo-vm-NRJ" firstAttribute="leading" secondItem="cnF-td-Ba1" secondAttribute="leading" id="YTk-Bj-AAL"/>
                                                 <constraint firstAttribute="trailing" secondItem="Nk5-ay-wTI" secondAttribute="trailing" constant="16" id="hgw-WW-ANP">
@@ -270,7 +282,7 @@
                                                 </constraint>
                                                 <constraint firstItem="cnF-td-Ba1" firstAttribute="top" secondItem="P9C-72-GAw" secondAttribute="bottom" id="wGY-Kc-fAX"/>
                                                 <constraint firstItem="teo-vm-NRJ" firstAttribute="trailing" secondItem="cnF-td-Ba1" secondAttribute="trailing" id="zii-Gr-Qlx"/>
-                                                <constraint firstAttribute="bottom" secondItem="teo-vm-NRJ" secondAttribute="bottom" constant="16" id="zsJ-Mi-jYC">
+                                                <constraint firstAttribute="bottom" secondItem="caw-n1-Lb1" secondAttribute="bottom" constant="16" id="zsJ-Mi-jYC">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                                                 </constraint>
                                             </constraints>
@@ -594,6 +606,9 @@
                         <outlet property="safariProtectionSwitch" destination="gZs-M6-5s0" id="OTx-Yy-SNu"/>
                         <outlet property="systemIcon" destination="4LF-7o-NaU" id="7Fx-eK-rff"/>
                         <outlet property="systemProtectionSwitch" destination="Nk5-ay-wTI" id="nto-Aj-eGg"/>
+                        <outlet property="systemWarningLabel" destination="caw-n1-Lb1" id="caw-o1-Lbl"/>
+                        <outlet property="systemWarningLabelHeight" destination="caw-h1-Hgt" id="caw-o2-Hgt"/>
+                        <outlet property="systemWarningLabelSpacing" destination="caw-c3-Spc" id="caw-o3-Spc"/>
                         <outlet property="titlImageView" destination="ygl-Nz-r9R" id="dwr-uv-MP8"/>
                         <outletCollection property="themableLabels" destination="vlx-BS-A2y" collectionClass="NSMutableArray" id="N2e-8O-X6M"/>
                         <outletCollection property="themableLabels" destination="884-Hm-mb6" collectionClass="NSMutableArray" id="WRG-b1-9GS"/>

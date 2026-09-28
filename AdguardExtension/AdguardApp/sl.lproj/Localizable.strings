@@ -961,6 +961,10 @@
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Za uporabo izvornega DNS, izberite <b>%@</b> v <b>Nastavitve sistema -> Splošno -> VPN in upravljanje naprav -> DNS</b>.";
 
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Priporočamo, da funkcijo Connectivity Assist onemogočite v <b>Sistemske nastavitve → Wi-Fi → Connectivity Assist</b>";
+"connectivity_assist_warning_badge_description" = "Priporočamo, da funkcijo Connectivity Assist onemogočite v <b>Sistemske nastavitve → Wi-Fi → Connectivity Assist</b>";
+
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Povejte nam, ali ste zadovoljni z dosedanjo izkušnjo zaviranja oglasov";
 

@@ -23,7 +23,7 @@
 "F6u-LX-1dd.text" = "Zanechajte spätnú väzbu";
 
 /* Class = "UILabel"; text = "Leave feedback"; ObjectID = "GA6-E3-BcJ"; Note = "(Main Menu) Advanced Settings caption"; */
-"GA6-E3-BcJ.text" = "Zostaw opinię";
+"GA6-E3-BcJ.text" = "Zanechať spätnú väzbu";
 
 /* Class = "UILabel"; text = "General"; ObjectID = "L2l-pO-K3q"; Note = "(Main Menu) Advanced Settings caption"; */
 "L2l-pO-K3q.text" = "Všeobecné";
@@ -38,7 +38,7 @@
 "UJb-NW-d5B.text" = "Nastavenia";
 
 /* Class = "UILabel"; text = "Attach application logs"; ObjectID = "V7E-QE-uIA"; */
-"V7E-QE-uIA.text" = "Dołączenie logów aplikacji";
+"V7E-QE-uIA.text" = "Priložiť protokoly aplikácie";
 
 /* Class = "UILabel"; text = "Discuss in social networks or on GitHub"; ObjectID = "W6h-Gt-MMt"; */
 "W6h-Gt-MMt.text" = "Diskutujte na sociálnych sieťach alebo na GitHub";

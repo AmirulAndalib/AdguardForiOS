@@ -134,7 +134,7 @@
 "jmQ-ze-hFG.text" = "In de split-tunnel modus is AdGuard compatibel met zogenaamde \"persoonlijke VPN\" apps. In deze modus kan dit omzeilt worden door het systeem wanneer er een beperkte connectiviteit is.";
 
 /* Class = "UILabel"; text = "Fallback servers"; ObjectID = "k0U-fn-m9X"; */
-"k0U-fn-m9X.text" = "Fallback servers";
+"k0U-fn-m9X.text" = "Back-up servers";
 
 /* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "nL4-Vl-Gcz"; */
 "nL4-Vl-Gcz.headerTitle" = "Overige";

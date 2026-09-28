@@ -95,7 +95,7 @@
 "protection_disabled_caption" = "Абарона выключана";
 
 /* (GetProTableController) upgrade button title; look like 'Try for free\n7 days free, then 1$.00/moth'*/
-"upgrade_button_title" = "Спрабаваць бясплатна\n7 дзён бясплатна, далей %@";
+"upgrade_button_title" = "Паспрабаваць бясплатна\n7 дзён бясплатна, далей %@";
 
 /* (GetProTableController) upgrade button title for month; looks like '$1.00/moth' */
 "upgrade_button_subscription_price_month" = "%@/месяц";
@@ -275,7 +275,7 @@
 "doq_protocol" = "DNS-over-QUIC";
 
 /* GetProController - confirm logout text */
-"confirm_logout_text" = "Вы ўпэўнены, што жадаеце выйсці?";
+"confirm_logout_text" = "Вы сапраўды хочаце выйсці?";
 
 /* (APVPNManager)  PRO version. Error, which may occur in DNS Filtering module. When user turns on DNS Filtering functionality. */
 "support_vpn_configuration_problem" = "Праблема з канфігурацыяй VPN. Звярніцеся ў службу падтрымкі.";
@@ -605,7 +605,7 @@
 "ads_filters_group_description" = "Фільтры, якія выдаляюць рэкламу";
 
 /* (OneSafariGroupFiltersModel) Privacy filters group description */
-"privacy_filters_group_description" = "Фільтры, якія прадухіляюць адсочванне";
+"privacy_filters_group_description" = "Спісы фільтраў, якія прадухіляюць адсочванне";
 
 /* (OneSafariGroupFiltersModel) Social Widgets filters group description */
 "social_widgets_filters_group_description" = "Фільтры, якія хаваюць віджэты сацыяльных сетак (кнопкі «Мне падабаецца» і таму падобнае)";
@@ -623,7 +623,7 @@
 "language_specific_filters_group_description" = "Фільтры, арыентаваныя на сайты на пэўных мовах";
 
 /* (OneSafariGroupFiltersModel) Custom filters group description */
-"custom_filters_group_description" = "Фільтры, якія вы дадалі ўручную";
+"custom_filters_group_description" = "Спісы фільтраў, якія вы дадалі ўручную";
 
 /* confirm reset lert text */
 "confirm_reset_text" = "Усе налады, уключаючы правілы карыстальніка, абарону DNS, інтэрфейс і налады аўтарызацыі, будуць скінуты. Гэта дзеянне нельга будзе адрабіць. Скінуць налады?";
@@ -632,7 +632,7 @@
 "reset_activity_title" = "Скінуць журнал актыўнасці";
 
 /* (DnsLogContainerController) reset activity log message */
-"reset_activity_message" = "Усе запісы аб дзейнасці будуць выдалены!";
+"reset_activity_message" = "Усе запісы актыўнасці будуць выдалены!";
 
 /*(MainScreen) "24 hours" chart date type */
 "chart_24hours" = "24 гадзіны";
@@ -785,7 +785,7 @@
 "invalid_upstream_message" = "Вы ўвялі некарэктны upstream";
 
 /* (UpstreamsController) error message text */
-"invalid_ip_message" = "Вы ўвялі некарэктны IP-адрас";
+"invalid_ip_message" = "Вы ўвялі памылковы IP-адрас";
 
 /* (NewDnsServerController) error title when trying to add unsupported protocol for DNS native implementation */
 "invalid_dns_protocol_title" = "Памылковы пратакол DNS";
@@ -887,7 +887,7 @@
 "bug_report_failed_message" = "Не ўдалося адправіць справаздачу аб памылцы. Паспрабуйце пазней";
 
 /* (BugReportController) Message when bug report successed */
-"bug_report_successed_message" = "Ваша справаздача пра памылку была паспяхова адпраўлена!";
+"bug_report_successed_message" = "Ваша справаздача з памылкай была паспяхова адпраўлена!";
 
 /* (IntroductionOnboardingController) - License agreement text */
 "introduction_license_agreement" = "Працягваючы выкарыстанне, вы прымаеце <br /><a href=\"%2$@\">EULA</a> і <a href=\"%1$@\">Палітыку прыватнасці</a>.";
@@ -957,6 +957,10 @@
 
 /* (HowToSetupController) - Native DNS setup description '%@' stands for application name; String for iOS 15 and newer */
 "native_dns_setup_description_ios15" = "Каб выкарыстоўваць уласны DNS, абярыце <b>%@</b> у <b>Налады сістэмы > Агульныя > VPN і сетка > DNS</b>.";
+
+/* (ConnectivityAssistWarningController) Connectivity Assist warning description; <br><br> stands for a paragraph break */
+"connectivity_assist_warning_summary" = "Рэкамендуем адключыць Connectivity Assist у <b>Сістэмныя налады → Wi-Fi → Connectivity Assist</b>";
+"connectivity_assist_warning_badge_description" = "Рэкамендуем адключыць Connectivity Assist у <b>Сістэмныя налады → Wi-Fi → Connectivity Assist</b>";
 
 /* (RateAppController) Rate app description text (\n) stands for new line */
 "rate_app_description" = "Раскажыце нам, ці задаволены вы блакіроўкай рэкламы";
@@ -1157,7 +1161,7 @@ DO NOT TRANSLATE "none" */
 "upstreams_custom_address_description" = "IP-адрас";
 
 /* (BlockingModeController) Custom ip description text */
-"custom_ip_description" = "Адказваць IP-адрасам, усталяваным уручную";
+"custom_ip_description" = "Адказваць IP-адрасам, які усталяваны ўручную";
 
 /* (FiltersMasterController) Header Filters title */
 "navigation_item_filters_title" = "Фільтры";
@@ -1278,7 +1282,7 @@ DO NOT TRANSLATE "none" */
 "youtube_share_extension_item_provider_error_title" = "Унутраная памылка";
 
 /* (YouTubeAdsRequestHandler) 'item provider error' alert message */
-"youtube_share_extension_item_provider_error_summary" = "Не атрымалася падзяліцца спасылкай з AdGuard";
+"youtube_share_extension_item_provider_error_summary" = "Не ўдалося абагуліць спасылку з AdGuard";
 
 /* (YouTubeAdsRequestHandler) 'item provider error' alert title */
 "youtube_share_extension_item_provider_unknown_error_title" = "Невядомая памылка";
